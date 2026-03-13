@@ -1,0 +1,25 @@
+# ==========================================
+# 🏠 TETO - PADRONIZAÇÃO DE CÓDIGO DA EQUIPE
+# ==========================================
+root = true
+
+# Regras gerais para todos os arquivos
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Regras para o Backend (Java)
+[*.java]
+indent_style = space
+indent_size = 4
+
+# Regras para o Frontend e Configurações (TS, JS, JSON, YML, XML)
+[*.{ts,tsx,js,jsx,json,yml,yaml,xml}]
+indent_style = space
+indent_size = 2
+
+# Regras para arquivos de documentação
+[*.md]
+trim_trailing_whitespace = false

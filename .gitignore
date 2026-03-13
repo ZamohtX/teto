@@ -1,0 +1,50 @@
+# =========================
+# GERAL & SISTEMA OPERACIONAL
+# =========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.log
+
+# =========================
+# VARIÁVEIS DE AMBIENTE (Crucial)
+# =========================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# =========================
+# BACKEND (Java / Spring Boot / Maven)
+# =========================
+teto-backend/target/
+teto-backend/!.mvn/wrapper/maven-wrapper.jar
+teto-backend/*~
+teto-backend/*.class
+teto-backend/*.jar
+teto-backend/*.war
+teto-backend/*.nar
+teto-backend/*.ear
+teto-backend/*.zip
+teto-backend/*.tar.gz
+teto-backend/*.rar
+
+# =========================
+# FRONTEND (React Native / Expo / Node)
+# =========================
+teto-mobile/node_modules/
+teto-mobile/.expo/
+teto-mobile/dist/
+teto-mobile/npm-debug.log*
+teto-mobile/yarn-debug.log*
+teto-mobile/yarn-error.log*
+teto-mobile/web-build/
+
+# Pastas nativas (caso façam "eject" do Expo no futuro)
+teto-mobile/ios/build/
+teto-mobile/ios/Pods/
+teto-mobile/android/app/build/
+teto-mobile/android/.gradle/

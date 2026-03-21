@@ -29,8 +29,9 @@ Faça o clone do projeto para a sua máquina e entre na pasta raiz:
 ```bash
 git clone [https://github.com/ZamohtX/teto.git](https://github.com/ZamohtX/teto.git)
 cd teto
+```
 
-Passo 1: Variáveis de Ambiente
+### Passo 1: Variáveis de Ambiente
 
 Nós não commitamos senhas. Você precisa criar o seu arquivo de ambiente local.
 
@@ -38,66 +39,60 @@ Nós não commitamos senhas. Você precisa criar o seu arquivo de ambiente local
 
     O arquivo já vem com os valores padrões para rodar o ambiente de desenvolvimento.
 
-Passo 2: Subir o Banco de Dados
+### Passo 2: Subir o Banco de Dados
 
 O PostgreSQL está configurado via Docker. Para subir o banco:
-Bash
-
+```Bash
 cd teto-backend
 docker-compose up -d
-
+```
 O banco de dados estará rodando na porta 5432.
-Passo 3: Rodar o Backend (API Java)
+
+### Passo 3: Rodar o Backend (API Java)
 
 Ainda dentro da pasta teto-backend, inicie o servidor do Spring Boot:
 
 No Mac/Linux:
-Bash
 
+```Bash
 ./mvnw spring-boot:run
-
+```
 No Windows:
-Bash
-
+```Bash
 .\mvnw spring-boot:run
-
+```
 O backend estará rodando e conectado ao banco. A API responderá em http://localhost:8080.
-Passo 4: Rodar o Frontend (App Mobile)
+
+### Passo 4: Rodar o Frontend (App Mobile)
 
 Abra uma nova aba no terminal (deixe o backend rodando na primeira), volte para a raiz do projeto e entre na pasta do mobile:
-Bash
 
+```Bash
 cd teto-mobile
 npm install
 npm start
-
+```
 Um QR Code aparecerá no seu terminal. Abra o aplicativo Expo Go no seu celular, escaneie o código e o app do Teto será compilado e aberto na sua tela!
-📝 Padrão de Commits (Conventional Commits)
+
+---
+## 📝 Padrão de Commits (Conventional Commits)
 
 Para mantermos o histórico do repositório organizado e legível, utilizamos o padrão de Conventional Commits. Todo commit deve seguir a estrutura: tipo: descrição breve.
 
-    feat: Uma nova funcionalidade (ex: feat: cria endpoint de login).
+- **feat**: Uma nova funcionalidade (ex: feat: cria endpoint de login).
+- **fix**: Correção de um bug (ex: fix: resolve erro de calculo no mercado de tarefas).
+- **chore**: Atualizações de ferramentas, dependências ou configurações que não afetam o código em produção (ex: chore: atualiza versão do expo).
+- **refactor**: Mudança de código que não corrige um bug nem adiciona uma feature, mas melhora a estrutura (ex: refactor: extrai lógica de pontos para um service).
+- **docs**: Alterações apenas na documentação (ex: docs: atualiza instruções no README).
+- **style**: Formatação de código, falta de ponto e vírgula, etc (ex: style: formata arquivos com prettier).
+---
 
-    fix: Correção de um bug (ex: fix: resolve erro de calculo no mercado de tarefas).
-
-    chore: Atualizações de ferramentas, dependências ou configurações que não afetam o código em produção (ex: chore: atualiza versão do expo).
-
-    refactor: Mudança de código que não corrige um bug nem adiciona uma feature, mas melhora a estrutura (ex: refactor: extrai lógica de pontos para um service).
-
-    docs: Alterações apenas na documentação (ex: docs: atualiza instruções no README).
-
-    style: Formatação de código, falta de ponto e vírgula, etc (ex: style: formata arquivos com prettier).
-
-🤝 Guia de Contribuição
+## 🤝 Guia de Contribuição
 
 O backend é um Monolito Modular dividido em domínios (users, tasks, market, gamification). Ao desenvolver uma nova feature, siga este fluxo rigorosamente:
 
-    Model (Entidades): Defina a estrutura no banco de dados.
-
-    Repository: Crie a interface para comunicação com o PostgreSQL.
-
-    DTOs: Defina os objetos de entrada (Requests) e saída (Responses) da sua feature.
-
-    Service: Isole toda a lógica de negócio aqui. O Controller não deve ter regras complexas.
-
-    Controller: Exponha os endpoints da API conectando os DTOs aos Services.
+- **Model (Entidades)**: Defina a estrutura no banco de dados.
+- **Repository**: Crie a interface para comunicação com o PostgreSQL.
+- **DTOs**: Defina os objetos de entrada (Requests) e saída (Responses) da sua feature.
+- **Service**: Isole toda a lógica de negócio aqui. O Controller não deve ter regras complexas.
+- **Controller**: Exponha os endpoints da API conectando os DTOs aos Services.
